@@ -499,13 +499,14 @@
 </footer>
 
 <script>
-  // ── SCROLL REVEAL — IntersectionObserver, zero scroll cost ──
+  // ── SCROLL REVEAL — re-triggers in both directions ──
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
         setTimeout(() => entry.target.classList.add('visible'), i * 60);
-        observer.unobserve(entry.target); // unobserve after firing — no ongoing cost
+      } else {
+        entry.target.classList.remove('visible');
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
