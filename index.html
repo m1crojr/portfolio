@@ -237,8 +237,48 @@
   .reveal.visible { opacity: 1; transform: translateY(0) translateZ(0); }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 700px) { nav { padding: 1rem 4%; } .nav-links { gap: 1.2rem; } .form-row { grid-template-columns: 1fr; } section { padding: 5rem 4%; } }
-  @media (max-width: 480px) { .nav-links { display: none; } }
+  /* ── WHAT I WRITE ── */
+  #what-i-write { max-width: 1100px; margin: 0 auto; }
+  .write-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(0,229,200,0.25);
+    border: 1px solid rgba(0,229,200,0.25);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .write-cell {
+    background: rgba(12,28,36,0.9);
+    padding: 1.6rem 1.5rem;
+    transition: background var(--transition);
+    position: relative;
+  }
+  .write-cell:hover { background: rgba(0,229,200,0.06); }
+  .write-cell:hover .write-icon { transform: scale(1.15); }
+  .write-icon {
+    font-size: 1.6rem; display: block;
+    margin-bottom: 0.85rem;
+    transition: transform var(--transition);
+  }
+  .write-type {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 0.9rem; color: var(--text);
+    margin-bottom: 0.4rem; line-height: 1.3;
+  }
+  .write-desc {
+    font-size: 0.78rem; color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .write-dot {
+    position: absolute; top: 1.4rem; right: 1.4rem;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--teal); opacity: 0.5;
+  }
+
+  @media (max-width: 900px) { .write-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 700px) { nav { padding: 1rem 4%; } .nav-links { gap: 1.2rem; } .form-row { grid-template-columns: 1fr; } section { padding: 5rem 4%; } .write-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .nav-links { display: none; } .write-grid { grid-template-columns: 1fr; } .write-cell[style] { grid-column: span 1 !important; } }
 </style>
 </head>
 <body>
@@ -252,6 +292,7 @@
   <ul class="nav-links">
     <li><a href="#hero">About</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#what-i-write">Services</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Work</a></li>
     <li><a href="#certifications">Certs</a></li>
@@ -322,6 +363,85 @@
       <div class="skill-desc">eBooks and whitepapers that don't read like homework. I write long-form assets that establish authority in a niche, answer the questions prospects are already asking, and give sales a reason to reach out.</div>
       <div class="skill-tags"><span class="tag">eBooks</span><span class="tag">Whitepapers</span><span class="tag">Research-Led Content</span></div>
     </div>
+  </div>
+</section>
+
+<!-- WHAT I WRITE -->
+<section id="what-i-write">
+  <div class="section-label">Content I Produce</div>
+  <h2 class="section-title">What I Can Help You With</h2>
+  <div class="write-grid">
+
+    <div class="write-cell reveal">
+      <div class="write-dot"></div>
+      <span class="write-icon">📝</span>
+      <div class="write-type">SEO Blog Posts</div>
+      <div class="write-desc">Long and short-form blogs targeting high-intent keywords — IT, tech, staffing, and B2B industries. Written to rank and to be read.</div>
+    </div>
+
+    <div class="write-cell reveal">
+      <div class="write-dot"></div>
+      <span class="write-icon">🌐</span>
+      <div class="write-type">Website & Landing Page Copy</div>
+      <div class="write-desc">Homepage, service pages, and landing pages written to convert visitors into leads — clear messaging, strong CTAs.</div>
+    </div>
+
+    <div class="write-cell reveal">
+      <div class="write-dot"></div>
+      <span class="write-icon">📱</span>
+      <div class="write-type">Social Media Content</div>
+      <div class="write-desc">Platform-native posts for LinkedIn, Twitter/X, and Instagram — short-form copy that builds presence and drives engagement.</div>
+    </div>
+
+    <div class="write-cell reveal">
+      <div class="write-dot"></div>
+      <span class="write-icon">💼</span>
+      <div class="write-type">LinkedIn Thought Leadership</div>
+      <div class="write-desc">Founder and executive posts that build authority, attract the right audience, and start real conversations in your industry.</div>
+    </div>
+
+    <div class="write-cell reveal">
+      <div class="write-dot"></div>
+      <span class="write-icon">📧</span>
+      <div class="write-type">Email Sequences</div>
+      <div class="write-desc">Nurture flows, cold outreach, and onboarding emails — each with a clear job: move the reader one step closer to a decision.</div>
+    </div>
+
+    <div class="write-cell reveal">
+      <div class="write-dot"></div>
+      <span class="write-icon">📘</span>
+      <div class="write-type">eBooks & Whitepapers</div>
+      <div class="write-desc">Long-form assets that establish authority, support mid-funnel buyers, and give sales teams something worth sharing.</div>
+    </div>
+
+    <div class="write-cell reveal">
+      <div class="write-dot"></div>
+      <span class="write-icon">🗺️</span>
+      <div class="write-type">Content Strategy</div>
+      <div class="write-desc">Full content roadmaps — audience research, topic planning, funnel mapping, and editorial calendars built to drive measurable outcomes.</div>
+    </div>
+
+    <div class="write-cell reveal">
+      <div class="write-dot"></div>
+      <span class="write-icon">🎯</span>
+      <div class="write-type">Ad & Campaign Copy</div>
+      <div class="write-desc">Short, punchy copy for paid ads, promotional campaigns, and product launches — written to stop the scroll and drive action.</div>
+    </div>
+
+    <div class="write-cell reveal" style="grid-column: span 2;">
+      <div class="write-dot"></div>
+      <span class="write-icon">🤝</span>
+      <div class="write-type">Sales & Enablement Assets</div>
+      <div class="write-desc">Battle cards, one-pagers, sales decks, and proposal templates that give your sales team the words to win the deal.</div>
+    </div>
+
+    <div class="write-cell reveal" style="grid-column: span 2;">
+      <div class="write-dot"></div>
+      <span class="write-icon">🏷️</span>
+      <div class="write-type">Brand Voice & Messaging</div>
+      <div class="write-desc">Tone of voice guides, messaging frameworks, and positioning documents so every piece of content sounds like one consistent brand.</div>
+    </div>
+
   </div>
 </section>
 
@@ -455,7 +575,7 @@
   <h2 class="section-title">Got a Content<br/>Problem to Solve?</h2>
   <p class="contact-sub">Whether you need a content strategy built from scratch, a sales deck that actually closes, or a writer who thinks like a marketer — let's talk. I respond within 24 hours.</p>
   <div class="contact-links">
-    <a href="mailto:jatinsingh.contact@gmail.com" class="btn-primary">📧 jatinsingh.contact@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#b8d2d9ccd1d6cbd1d6dfd096dbd7d6ccd9dbccf8dfd5d9d1d496dbd7d5" class="btn-primary">📧 <span class="__cf_email__" data-cfemail="2d474c5944435e44434a45034e4243594c4e596d4a404c4441034e4240">[email&#160;protected]</span></a>
     <a href="https://www.linkedin.com/in/jatinsingh-1096b5160" target="_blank" class="btn-outline glass contact-link">💼 LinkedIn</a>
   </div>
   <div class="glass contact-form reveal" style="padding: 2rem;" id="contactCard">
@@ -498,7 +618,7 @@
   <p>Designed & built with intent · <span>Jatin Singh</span> © 2026 · Indore, India</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── SCROLL REVEAL — re-triggers in both directions ──
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
@@ -563,7 +683,7 @@
       if (res.ok) {
         document.getElementById('formBody').style.display = 'none';
         document.getElementById('formSuccess').classList.add('show');
-      } else throw new Error('Server error');
+            } else throw new Error('Server error');
     } catch (err) {
       btn.disabled = false;
       btn.innerHTML = 'Send Message →';
